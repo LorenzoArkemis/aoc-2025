@@ -11,7 +11,6 @@ File.stream!("test")
 |> then(fn [h | t] -> {h, t} end)
 |> then(
   &Enum.reduce(elem(&1, 1), {elem(&1, 0), 0}, fn curr_splits, {prev_beams, count} ->
-    IO.inspect({prev_beams, count})
     curr_split_indexes = Enum.map(curr_splits, fn {_, index} -> index end)
 
     Enum.reduce(prev_beams, {[], count}, fn

@@ -1,5 +1,3 @@
-start_time = System.monotonic_time(:millisecond)
-
 File.stream!("input")
 |> Stream.map(&String.trim/1)
 |> Stream.map(&String.graphemes/1)
@@ -28,6 +26,3 @@ end)
 |> Map.values()
 |> Enum.sum()
 |> IO.inspect()
-
-end_time = System.monotonic_time(:millisecond)
-IO.puts("Execution time: #{end_time - start_time}ms")
